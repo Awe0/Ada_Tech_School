@@ -42,8 +42,6 @@ function askBirthYear(){
     return document.body.innerHTML += `<h3>${affichageAge}</h3>`
     
 }
-const date = new Date(1995, 0, 11)
-console.log(date.toDateString())
 
 askName()
 askBirthYear()
