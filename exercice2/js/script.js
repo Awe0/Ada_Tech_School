@@ -1,2 +1,4 @@
-let test = 50
-console.log(test);
+function getValue(){
+    let givenNumber = document.getElementById("givenNumber").value;
+    console.log(givenNumber);
+}
