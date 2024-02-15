@@ -15,9 +15,17 @@ function searchMysteryNumber(givenNumber){
         console.log("Bravo");
         displayResult("Bravo !")       
     }
+    else if (givenNumber > mysteryNumber){
+        displayResult("Trop grand !")
+    }
+    else {
+        displayResult("Trop petit  !")
+    }
 }
 
 function displayResult(resultGame){
+    console.log(resultGame);
     let result = document.getElementById("result")
-    result = resultGame
+    console.log(result);
+    result.innerText = resultGame
 }
