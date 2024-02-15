@@ -6,22 +6,30 @@
     <title>Document</title>
     <script src="js/script.js" defer></script>
     <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div>
         <h1>Trouvez le nombre mystère</h1>
     </div>
-    <label for="password">Nombre mystère</label>
-    <input type="password" id="mysteryNumber" name="mysteryNumber" placeholder="Nombre entre 1 et 50" min="0" max="50"/>
-    <label for="number">Nombre</label>
-    <input type="number" id="givenNumber" name="givenNumber" min="0" max="50"/>
-    <button type="button" id="button">Validez</button>
+
+    <div class="box" id="box1">
+        <label for="password" id="txtMysteryNumber">Nombre mystère</label>
+        <input type="password" id="mysteryNumber" name="mysteryNumber" placeholder="Nombre entre 1 et 50" min="0" max="50"/>
+    </div>
+
+    <div class="box" id="box2">
+        <label for="number" id="txtNumber">Nombre</label>
+        <input type="number" id="givenNumber" name="givenNumber" placeholder="Tape ici" min="0" max="50"/>
+    </div>
+
+    <span><button type="button" id="button">Validez</button></span>
     <div>
         <h2 id="result"></h2>
     </div>
     <div>
         <h2 id="try"></h2>
     </div>
-    <button type="button" id="reload">Recommencez</button>
+    <span><button type="button" id="reload">Recommencez</button></span>
 </body>
 </html>

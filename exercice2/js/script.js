@@ -8,7 +8,7 @@ function playGame(){
     let reloadButton = document.getElementById("reload");
     let tryNumber = 0
 
-    reloadButton.addEventListener("click", () =>{
+    reloadButton.addEventListener("click", () => {
         window.location.reload()
     })
 
@@ -16,15 +16,20 @@ function playGame(){
         let mysteryNumber = baliseMysteryNumber.value
         let givenNumber = baliseNumber.value
         tryNumber ++
-        searchMysteryNumber(givenNumber, mysteryNumber, tryNumber)
         ruleVerify(givenNumber, mysteryNumber)
+        searchMysteryNumber(givenNumber, mysteryNumber, tryNumber)
         displayTry(tryNumber)
+    })
+    document.addEventListener("keyup", (e) => {
+        if (e.keyCode === 13){
+            myButton.click()
+        }
     })
 }
 
 /**
  * Cette fonction compare le nombre recu avec le nombre mystere
- * et vérifie s'ils respect la condition de 1 à 50
+ * et vérifie s'ils respectent la condition de 1 à 50
  * @param {number} givenNumber : nombre choisi par le joueur 2
  * @param {number} mysteryNumber : nombre choisi par le joueur 1
  * @param {number} tryNumber : nombre de tentative du joueur 2
@@ -47,7 +52,7 @@ function searchMysteryNumber(givenNumber, mysteryNumber, tryNumber){
  */
 function displayResult(resultGame){
     let result = document.getElementById("result")
-    result.innerText = resultGame    
+    result.innerText = resultGame
 }
 
 /**
@@ -60,8 +65,7 @@ function displayTry(tryNumber){
 }
 
 /**
- * Cette fonction compare le nombre recu avec le nombre mystere
- * et vérifie s'ils respect la condition de 1 à 50
+ * Vérifie si les deux nombres respect la condition de 1 à 50
  * @param {number} givenNumber : nombre choisi par le joueur 2
  * @param {number} mysteryNumber : nombre choisi par le joueur 1
  */

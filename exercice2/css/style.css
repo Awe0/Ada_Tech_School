@@ -1,0 +1,66 @@
+h1 {
+    color: rgb(273, 72, 50);
+    background-color: rgb(248, 217, 209);
+    font-size: 500%;
+    text-align: center;
+    font-family: 'Trebuchet MS';
+}
+
+h2 {
+    text-align: center;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Trebuchet MS';
+}
+
+#box1 {
+    background-color: aqua;
+}
+
+#box2 {
+    background-color: pink;
+    margin-top: 1%;
+}
+
+#txtMysteryNumber {
+    margin-inline: 0.8%;
+    color: darkblue;
+    font-family: 'Trebuchet MS';
+
+}
+
+#mysteryNumber {
+    background-color: rgba(0, 0, 139, 0.315);
+    color: white;
+}
+
+#txtNumber {
+    margin-inline: 0.8%;
+    color: brown;
+    font-family: 'Trebuchet MS';
+}
+
+#givenNumber {
+    color: white;
+    background-color: rgba(236, 106, 26, 0.407);
+}
+
+::placeholder {
+    text-align: center;
+    font-family: 'Trebuchet MS';
+    font-size: 80%;
+}
+
+button {
+    display: ;
+    border-radius: 25%;
+    font-size: large;
+    color: white;
+    background-color: lightsalmon;
+    margin: auto;
+    cursor: pointer;
+}
