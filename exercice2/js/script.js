@@ -1,18 +1,26 @@
+/**
+ * Fonction qui permet de lancer le jeu
+ */
 function playGame(){
     let baliseNumber = document.getElementById("givenNumber");
-    console.log(givenNumber);
+    let baliseMysteryNumber = document.getElementById("mysteryNumber");
     let myButton = document.getElementById("button");
     myButton.addEventListener("click", () => {
+        let mysteryNumber = baliseMysteryNumber.value
         let givenNumber = baliseNumber.value
-        searchMysteryNumber(givenNumber)
+        console.log(mysteryNumber);
+        console.log(givenNumber);
+        searchMysteryNumber(givenNumber, mysteryNumber)
     })
 }
 
-function searchMysteryNumber(givenNumber){
-    let mysteryNumber = 22
-    console.log(givenNumber);
+/**
+ * Cette fonction compare le nombre recu avec le nombre mystere
+ * @param {number} givenNumber : nombre choisi par le joueur 2
+ * @param {number} mysteryNumber : nombre choisi par le joueur 1
+ */
+function searchMysteryNumber(givenNumber, mysteryNumber){
     if(givenNumber == mysteryNumber){
-        console.log("Bravo");
         displayResult("Bravo !")       
     }
     else if (givenNumber > mysteryNumber){
@@ -23,6 +31,10 @@ function searchMysteryNumber(givenNumber){
     }
 }
 
+/**
+ * Cette fonction affiche le resultat 
+ * @param {string} resultGame : texte envoyé par la fonction searchMysteryNumber
+ */
 function displayResult(resultGame){
     console.log(resultGame);
     let result = document.getElementById("result")
