@@ -56,7 +56,8 @@ h2 {
 }
 
 button {
-    display: ;
+    display: flex;
+    justify-content: space-between;
     border-radius: 25%;
     font-size: large;
     color: white;
