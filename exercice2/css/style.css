@@ -6,6 +6,21 @@ h1 {
     font-family: 'Trebuchet MS';
 }
 
+h4 {
+    color: rgb(273, 72, 50);
+    background-color: rgb(248, 217, 209);
+    text-align: center;
+    font-family: 'Trebuchet MS';
+}
+
+#instructions {
+    color: rgb(273, 72, 50);
+    background-color: rgb(248, 217, 209);
+    text-align: center;
+    font-family: 'Trebuchet MS';
+    font-size: 300%;
+}
+
 h2 {
     text-align: center;
 }
@@ -23,14 +38,13 @@ h2 {
 
 #box2 {
     background-color: pink;
-    margin-top: 1%;
+    margin-top: 0.5%;
 }
 
 #txtMysteryNumber {
     margin-inline: 0.8%;
     color: darkblue;
     font-family: 'Trebuchet MS';
-
 }
 
 #mysteryNumber {
@@ -55,7 +69,7 @@ h2 {
     font-size: 80%;
 }
 
-button {
+#valid {
     display: flex;
     justify-content: space-between;
     border-radius: 25%;
@@ -64,4 +78,33 @@ button {
     background-color: lightsalmon;
     margin: auto;
     cursor: pointer;
+}
+
+#reload {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 25%;
+    font-size: large;
+    color: white;
+    background-color: lightsalmon;
+    margin: auto;
+    cursor: pointer;
+}
+
+#switchRandom {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 25%;
+    font-size: large;
+    color: white;
+    background-color: lightsalmon;
+    margin: auto;
+    cursor: pointer;
+}
+
+#boxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
