@@ -20,7 +20,7 @@ function playGame(){
         searchMysteryNumber(givenNumber, mysteryNumber, tryNumber)
         displayTry(tryNumber)
     })
-    document.addEventListener("keyup", (e) => {
+    document.addEventListener("keypress", (e) => {
         if (e.keyCode === 13){
             myButton.click()
         }
