@@ -1,4 +1,4 @@
-function askName(){
+ function askName(){
     let prenom = prompt("Quel est votre prénom ?");
     let bonjour = "Bonjour " + prenom + " !";
     return document.body.innerHTML +=  `<h1>${bonjour}</h1>`

@@ -6,8 +6,24 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-
-        <h1>Ada Tech School</h1>
+        
+        <h1>Morse translate (CAPS ONLY)</h1>
+        
+        <label for="zoneUser"></label>
+        <textarea id="zoneLatin" placeholder="TRANSLATE TEXT TO MORSE"></textarea>
+        <button type="button" id="valid">Validez</button>
+        <textarea id="zoneMorse" placeholder="TRANSLATE MORSE TO TEXT"></textarea>
+        <button type="button" id="validMorse">Validez</button>
+        <div>
+            <h2 id="text"></h2>
+        </div>
+        <div>
+            <h2 id="cutText"></h2>
+        </div>
+        <div>
+            <h2 id="translatText"></h2>
+        </div>
+        <script src="js/dictionnaire.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>
