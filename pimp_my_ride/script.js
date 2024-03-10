@@ -5,9 +5,7 @@ let clientTrips = [
   "Roger 0 5 10",
   "Pongo 3 7 14",
   "Perdita 8 10 8",
-  "Anita 16 3 7",
-  "Leïla 15 1 20",
-  "Allan 6 8 17"
+  "Anita 16 3 7"
 ];
 /** Parser   */
 
@@ -128,9 +126,7 @@ function findBestPrice(allArray){
 }
 
 let travelsParsed = sortTrips(clientTrips);
-// console.log(travelsParsed);
 getTripsPrice(travelsParsed);
 let allArray = findCompabilities(travelsParsed);
-console.log(allArray);
 findBestPrice(allArray)
 
