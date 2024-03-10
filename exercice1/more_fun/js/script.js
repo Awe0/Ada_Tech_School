@@ -12,6 +12,7 @@ function askBirthYear(){
     let nomMois = ["de janvier","de février","de mars","d'avril","de mai","de juin","de juillet","d'août","de septembre","d'octobre","de novembre","de décembre"]
     let day = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
     let date = new Date(annee, mois, jour)
+    console.log(date)
     date = date.toDateString()
     date = date.substr(0, 3)
     console.log(date)
