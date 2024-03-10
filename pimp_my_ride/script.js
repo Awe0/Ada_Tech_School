@@ -6,8 +6,9 @@ let clientTrips = [
   "Pongo 3 7 14",
   "Perdita 8 10 8",
   "Anita 16 3 7",
+  "Leïla 15 1 20",
+  "Allan 6 8 17"
 ];
-
 /** Parser   */
 
 //4. récupère tableau clientTrips
@@ -93,23 +94,36 @@ function findCompabilities(travelsParsed) {
 
 function findBestPrice(allArray){
   let dataPrices = []
-  let dataClients = []
+  let dataClientA = []
+  let dataClientB = []
+  let dataStartA = []
+  let dataStartB = []
+  let dataArrivalA = []
+  let dataArrivalB = []
   for(i=0;i<allArray.length;i++){
     let prices = allArray[i][0].price+allArray[i][1].price
-    let clients = allArray[i][0].client+allArray[i][1].client
+    let clientA = allArray[i][0].client
+    let clientB = allArray[i][1].client
+    let startA = allArray[i][0].start
+    let startB = allArray[i][1].start
+    let arrivalA = allArray[i][0].start+allArray[i][0].duration
+    let arrivalB = allArray[i][1].start+allArray[i][1].duration
     dataPrices.push(prices)
-    dataClients.push(clients)
+    dataClientA.push(clientA)
+    dataClientB.push(clientB)
+    dataStartA.push(startA)
+    dataStartB.push(startB)
+    dataArrivalA.push(arrivalA)
+    dataArrivalB.push(arrivalB)
   }
-  let mostProfitable = Math.max(...dataPrices)
-  // console.log(mostProfitable);
-  for(j=0;j<dataClients.length;j++)
-    console.log(dataClients[j]);
-    console.log(mostProfitable);
-    if(mostProfitable == dataPrices[j]){
-      console.log(dataClients[j]+mostProfitable);
-    }
-    else{
-      console.log(dataClients[j]+mostProfitable);
+    const mostProfitable = Math.max(...dataPrices)
+    for(j=0;j<dataPrices.length;j++){
+      if(dataPrices[j] === mostProfitable){
+        return baliseReturn.innerHTML += "<br/>"+dataClientA[j]+" départ "+dataStartA[j]+ "h, arrivé "+dataArrivalA[j]+"h et<br/>"+dataClientB[j]+" départ "+dataStartB[j]+ "h, arrivé "+dataArrivalB[j]+"h <br/>pour un prix total de "+dataPrices[j]+"€ est <br/>le voyage le plus rentable pour la société !";
+      }
+      else{
+        return console.log("Error : Aucun prix n'est enregistré");
+      }
     }
 }
 
@@ -119,3 +133,4 @@ getTripsPrice(travelsParsed);
 let allArray = findCompabilities(travelsParsed);
 console.log(allArray);
 findBestPrice(allArray)
+
