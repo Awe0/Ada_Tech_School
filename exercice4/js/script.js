@@ -6,7 +6,7 @@ const baliseTranslatText = document.getElementById("translatText")
 const baliseTranslatTextM = document.getElementById("translatTextM")
 const morseArea = document.getElementById("zoneMorse")
 const validBMorse = document.getElementById("validMorse")
-
+console.log(validButton);
 function click(){
     validButton.addEventListener("click", () => {
         const entryUser = textarea.value
