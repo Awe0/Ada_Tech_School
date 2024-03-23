@@ -1,29 +1,36 @@
 const ulElement = document.querySelector("ul");
 const systemeAPI = fetch("https://api.le-systeme-solaire.net/rest/bodies/");
+const colorPlanet = [[174,233,255],[30,95,247],[238,200,112],[232,130,28],[201,164,62],[249,235,109],[116,116,213],[246,182,7]];
+let listeObjects = [];
+let lune;
 
 /**
  * Créer le lien avec l'API et récupère les données.
- */
+*/
 systemeAPI.then(response => {
     return response.json();
 }).then(json => {
-    for (n=0; n<json.bodies.length;n++){
-        if (json.bodies[n].isPlanet === true){
-            equaRadius.push(json.bodies[n].equaRadius);
-            aphelion.push(json.bodies[n].aphelion);
-            semiMajorAxis.push(json.bodies[n].semimajorAxis);
-            sideralOrbit.push(json.bodies[n].sideralOrbit);
+    const orbitSpeed = calculOrbitSpeed(json.bodies)
+    json.bodies.forEach(element => {
+        if (element.isPlanet === true){
+            listeObjects.push(element)
+            addColorAndOrbitSpeed(listeObjects, orbitSpeed);
             const liElement = document.createElement("li");
             liElement.classList.add("visible");
-            liElement.innerText = json.bodies[n].name;
-            ulElement.appendChild(liElement);    
+            liElement.innerText = element.name;
+            ulElement.appendChild(liElement);  
         }
-    } 
+        else if (element.id === "lune"){
+            lune = element
+            lune.colorPlanet = [100,100,100]
+            lune.orbitSpeed = 90
+        }
+    });
 })
 
 /**
  * Initialise le canvas
- */
+*/
 function setup(){
     createCanvas(windowWidth, windowHeight, WEBGL);
     createSliders()
@@ -43,7 +50,7 @@ function createSliders(){
 
 /**
  * Affiche l'animation chaque frames
- */
+*/
 function draw(){
     background(0,0,0,0);
     ambientLight(5, 5, 5); // white light
@@ -60,22 +67,19 @@ function draw(){
     pop();
     createPlanet();
 }
+
 /**
  * Lance le calcul de la vitesse orbital, une fois terminé, créée les planetes
- */
+*/
 function createPlanet(){
-    if (orbitSpeed.length === 0) {
-        calculOrbitSpeed()
-    }
-    for (let i = 0; i < equaRadius.length; i++){ 
-        rotateY(millis()/orbitSpeed[i]*orbitSpeedSlider.value());
-        console.log(millis());
+    for (let i = 0; i < listeObjects.length; i++){
+        rotateY(millis()/listeObjects[i].orbitSpeed*orbitSpeedSlider.value());
         push();
         sphere(1);
-        emissiveMaterial(colorPlanet[i]);
-        translate(aphelion[i]/10000000+120,0);
-        sphere(equaRadius[i]/5000);
-        pop();   
+        emissiveMaterial(listeObjects[i].colorPlanet);
+        translate(listeObjects[i].aphelion/10000000+120,0);
+        sphere(listeObjects[i].equaRadius/5000);
+        pop();
     }
 }
 
@@ -89,8 +93,20 @@ function windowResized() {
 /**
  * Calcul la vitesse orbital des sphères
  */
-function calculOrbitSpeed(){
-    for (let i = 0; i < equaRadius.length; i++) {
-        orbitSpeed.push((2*Math.PI*semiMajorAxis[i]/sideralOrbit[i])/8640);
+function calculOrbitSpeed(json){
+    let orbitSpeed = []
+    for (let i = 0; i < json.length; i++) {
+        if (json[i].isPlanet === true){
+            orbitSpeed.push((2*Math.PI*json[i].semimajorAxis/json[i].sideralOrbit)/8640);
+        }
+    }
+    return orbitSpeed
+}
+
+function addColorAndOrbitSpeed(listeObjects,orbitSpeed){
+    for (i = 0; i < listeObjects.length; i++) {
+        listeObjects[i].colorPlanet = colorPlanet[i]
+        listeObjects[i].orbitSpeed = orbitSpeed[i]
     }
 }
+
