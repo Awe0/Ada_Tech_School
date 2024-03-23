@@ -1,0 +1,27 @@
+body {
+    background:black;
+    color: white;
+    background-image:url("background.png");
+    font-family: "Fira Code", monospace;
+}h1 {
+    font-size: 2em;
+    text-align: center;
+    width: 100vw;
+    position: absolute;
+}.div{
+    display: flex;
+    align-items: center;}
+.invisible{
+    display: none;
+}
+.visible{
+    display: block;
+}main {
+    position: absolute;
+}.index-planet {
+    position: absolute;
+    background: black;
+    margin : 0;
+    font-size: 1.5em;
+    line-height: 1.7em;
+}
