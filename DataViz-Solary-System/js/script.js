@@ -2,7 +2,6 @@ const ulElement = document.querySelector("ul");
 const systemeAPI = fetch("https://api.le-systeme-solaire.net/rest/bodies/");
 const colorPlanet = [[174,233,255],[30,95,247],[238,200,112],[232,130,28],[201,164,62],[249,235,109],[116,116,213],[246,182,7]];
 let listeObjects = [];
-let lune;
 
 /**
  * Créer le lien avec l'API et récupère les données.
@@ -19,11 +18,6 @@ systemeAPI.then(response => {
             liElement.classList.add("visible");
             liElement.innerText = element.name;
             ulElement.appendChild(liElement);  
-        }
-        else if (element.id === "lune"){
-            lune = element
-            lune.colorPlanet = [100,100,100]
-            lune.orbitSpeed = 90
         }
     });
 })
@@ -103,6 +97,9 @@ function calculOrbitSpeed(json){
     return orbitSpeed
 }
 
+/**
+ * Ajoute les données 'colorPlanet' et 'orbitSpeed' à la liste des objets
+ */
 function addColorAndOrbitSpeed(listeObjects,orbitSpeed){
     for (i = 0; i < listeObjects.length; i++) {
         listeObjects[i].colorPlanet = colorPlanet[i]
