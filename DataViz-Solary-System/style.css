@@ -1,14 +1,29 @@
 body {
     background:black;
     color: white;
-    background-image:url("background.png");
+    /* background-image:url("background.png"); */
     font-family: "Fira Code", monospace;
 }h1 {
-    font-size: 2em;
+    font-size: 1.8em;
     text-align: center;
     width: 100vw;
     position: absolute;
-}.div{
+    font-weight: 100;
+    padding-bottom: 8px;
+    color: lime;
+}
+
+h1:before{
+    content: '___________________======[' ;
+    color: white;
+}
+
+h1:after{
+    content: ']======___________________';
+    color: white;
+}
+
+.div{
     display: flex;
     align-items: center;}
 .invisible{
@@ -18,10 +33,84 @@ body {
     display: block;
 }main {
     position: absolute;
+    z-index: -1;
 }.index-planet {
     position: absolute;
-    background: black;
     margin : 0;
-    font-size: 1.5em;
+    font-size: 2.2em;
     line-height: 1.7em;
+    margin-top: 10vh;
+}.planet-button{
+    font-family: "Fira Code", monospace;
+    z-index: 1;
+    background-color:transparent; /* Green */
+    border: 1.5px solid grey;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+}
+.planet-button:hover{
+    color: lime;
+    border: 1.5px solid lime;
+    padding: 7px 17px;
+    cursor: pointer; /* Cursor on hover */
+}
+#info-planet {
+    position: absolute;
+    color: lime;
+    font-size: 1em;
+    line-height: 1em;
+    right: 0;
+    margin-right: 50px;
+    text-align: right;
+    margin-top: 20vh;
+}
+
+.slider{
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: white;
+    outline: none; /* Remove outline */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    height: 2px;
+}
+
+.slider:hover{
+    background: lime;
+}
+
+.slider::-moz-range-thumb {
+    width: 5px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: lime; /* Green background */
+    cursor:ew-resize;
+    border: none;
+    border-radius: 0;
+}
+
+#info-planet .titre{
+    color: white;
+    margin-right: 10px;
+}
+
+#info-planet .titre:after{
+    content: " ▶";
+    color: grey;
+    
+}
+
+#slider-box {
+    position: absolute;
+    top: 82vh;
+    left: 28vw;
+    color: lime;
+}
+
+#slider-box li{
+    display: inline;
+    margin-right: 13.5vw;
 }
