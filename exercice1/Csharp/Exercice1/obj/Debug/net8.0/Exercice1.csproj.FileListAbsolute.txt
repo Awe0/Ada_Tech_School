@@ -1,0 +1,15 @@
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/bin/Debug/net8.0/Exercice1
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/bin/Debug/net8.0/Exercice1.deps.json
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/bin/Debug/net8.0/Exercice1.runtimeconfig.json
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/bin/Debug/net8.0/Exercice1.dll
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/bin/Debug/net8.0/Exercice1.pdb
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/obj/Debug/net8.0/Exercice1.GeneratedMSBuildEditorConfig.editorconfig
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/obj/Debug/net8.0/Exercice1.AssemblyInfoInputs.cache
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/obj/Debug/net8.0/Exercice1.AssemblyInfo.cs
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/obj/Debug/net8.0/Exercice1.csproj.CoreCompileInputs.cache
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/obj/Debug/net8.0/Exercice1.sourcelink.json
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/obj/Debug/net8.0/Exercice1.dll
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/obj/Debug/net8.0/refint/Exercice1.dll
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/obj/Debug/net8.0/Exercice1.pdb
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/obj/Debug/net8.0/Exercice1.genruntimeconfig.cache
+/home/allan/Ada/Ada-Exercice-Projets/exercice1/Csharp/Exercice1/obj/Debug/net8.0/ref/Exercice1.dll
