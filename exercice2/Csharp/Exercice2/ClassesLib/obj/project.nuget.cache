@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "SzomxD3J4uaTOq5lOFiioJAbHz7xcWnmCl1W9OgG3yDokryW5K2HQvU2UVJpNg5GeXKtLoj9bJaaWclzmSZbMw==",
+  "success": true,
+  "projectFilePath": "/home/allan/Ada/Ada-Exercice-Projets/exercice2/Csharp/Exercice2/ClassesLib/ClassesLib.csproj",
+  "expectedPackageFiles": [
+    "/home/allan/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.2/microsoft.aspnetcore.app.ref.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
