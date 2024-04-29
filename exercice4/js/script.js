@@ -6,24 +6,23 @@ const baliseTranslatText = document.getElementById("translatText")
 const baliseTranslatTextM = document.getElementById("translatTextM")
 const morseArea = document.getElementById("zoneMorse")
 const validBMorse = document.getElementById("validMorse")
-console.log(validButton);
-function click(){
-    validButton.addEventListener("click", () => {
-        const entryUser = textarea.value
-        baliseTranslatText.innerText = null
-        translateLatinWord(entryUser)
-    })
-    validBMorse.addEventListener("click", () => {
-        const entryUserMorse = morseArea.value
-        baliseTranslatTextM.innerText = null
-        const arrMorse = getMorseCharacterList(entryUserMorse)
-        translateMorseWord(arrMorse)
-    })
-}
+
+
+validButton.addEventListener("click", () => {
+    const entryUser = textarea.value
+    baliseTranslatText.innerText = null
+    translateLatinWord(entryUser)
+})
+validBMorse.addEventListener("click", () => {
+    const entryUserMorse = morseArea.value
+    baliseTranslatTextM.innerText = null
+    const arrMorse = getMorseCharacterList(entryUserMorse)
+    translateMorseWord(arrMorse)
+})
 
 function translateLatinWord(caracterArray){
     for(let i = 0; i<caracterArray.length; i++){
-        baliseTranslatText.innerText += latinToMorse[caracterArray[i]] + " "
+        baliseTranslatText.innerText += latinToMorse[caracterArray[i].toUpperCase()] + " "
     }
 }
 
@@ -34,20 +33,7 @@ function translateMorseWord(caracterArray){
 }
 
 function getMorseCharacterList(entryUser){
-    const a = []
-    let searchTerm = '';
-    entryUser += ' '
-    console.log(entryUser);
-    for(i = 0; i<entryUser.length; i++){
-        if (entryUser[i] !== ' ') {
-           searchTerm += entryUser[i]
-        }
-        else if (searchTerm !== '') {
-            a.push(searchTerm);
-            searchTerm = '';
-        }
-    }
-return a
+    const cleanEntryUser = entryUser.trim()
+    const entryUserSplit = cleanEntryUser.split(' ')
+return entryUserSplit
 }
-
-click();
