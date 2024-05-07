@@ -1,0 +1,57 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+
+.popup-container {
+    width: 300px; 
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+
+.icon {
+    width: 50px; 
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+a {
+    color: #007bff; /* Blue color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3; 
+}
+img.icon {
+    width: 20px; 
+    height: auto; 
+    margin-right: 5px; /* space between the image and the text */
+    display: inline; 
+    vertical-align: middle; 
+}
