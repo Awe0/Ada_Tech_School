@@ -28,6 +28,7 @@ function translateLatinWord(caracterArray){
 
 function translateMorseWord(caracterArray){
     for(let i = 0; i<caracterArray.length; i++){
+        console.log(morseToLatin);
         baliseTranslatTextM.innerText += morseToLatin[caracterArray[i]]
     }
 }
