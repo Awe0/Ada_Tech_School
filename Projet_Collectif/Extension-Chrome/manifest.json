@@ -1,0 +1,16 @@
+{
+  "name": "Sunrise & Sunset Extensions",
+  "permissions": ["geolocation","storage"],
+  "description": "Cette extension affiche l'heure du lever du soleil, l'heure du coucher du soleil et la phase de la lune dans n'importe quelle ville.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "icons": {
+    "128": "icon_128.png"
+  }
+}
