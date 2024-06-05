@@ -1,7 +1,10 @@
-const winComposition = ["blue", "green", "red", "yellow"];
+const winArray = ["blue", "green", "green", "yellow"];
 const divButton = document.getElementById("divButton");
 const divGuess = document.getElementById("userGuess");
-// const guessButton = document.getElementById("guessButton");
+const divResult = document.getElementById("result")
+const notPresent = 0
+const presentButNotHere = 1
+const goodAwnser = 2
 let buttonArray = [];
 
 const colorList = {

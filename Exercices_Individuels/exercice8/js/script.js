@@ -6,7 +6,9 @@ function guess(){
             guessArray.push(idElement);
             if (guessArray.length === 4) {
                 displayGuess(guessArray);
-                winCondition(guessArray);
+                const checkedArray = checkResult(guessArray);
+                const result = countResult(checkedArray)
+                displayResult(result)
                 guessArray = []
             }
         })
@@ -29,58 +31,45 @@ function displayGuess(guessArray){
     liGuessing.innerText = guessArray;
 }
 
-function winCondition(guessArray){
-    const numberOfEqualsForWin = 4
-    let actualEquals = 0
-    const occurences = countOcc(guessArray)
-    console.log(occurences);
+function checkResult(guessArray){
+    let checkArray = [0,0,0,0]
     for (j = 0; j < guessArray.length; j++) {
-        for (i = 0; i < guessArray.length; i++) {;
-            if(guessArray[j] === winComposition[i]){
-                if (occurences === 1) {
-                    actualEquals = 1
-                }else{
-                    actualEquals++
+        for (i = 0; i < winArray.length; i++) {;
+            if (guessArray[j] === winArray[i]) {
+                if (j === i) {
+                    checkArray[i] = goodAwnser
+                    break
                 }
-                }else{
+                else if(checkArray[i] === notPresent && !(guessArray[j] === winArray[j]))
+                {
+                    checkArray[i] = presentButNotHere
+                }
             }
         }
     }
-    console.log(actualEquals);
+    return checkArray
 }
 
-/*
-Compte les occurences d'un tableau
-*/
-function countOcc(array){
-    const occ = new Map();
-    for (const n of array) {
-        if (occ.has(n)){
-            occ.set(n, occ.get(n) +1 )
-        } else {
-            occ.set(n, 1)
+function countResult(checkedArray){
+    let numberOfOne = 0;
+    let numberOfTwo = 0;
+    const checkedResult = [numberOfOne, numberOfTwo];
+    for (i = 0; i < checkedArray.length; i++) {
+        if (i === presentButNotHere) {
+            numberOfOne++;
+        }
+        else if (i === goodAwnser){
+            numberOfTwo++;
         }
     }
-    return occ.values()
+    return checkedResult;
 }
 
-function comparedOcc(){
-    const guessComp = ["blue","blue","pink","orange"]
-    const map1 = countOcc(winComposition)
-    const map2 = countOcc(guessComp)
-    for (const n of map1) {
-        if (map2 === n){
-            console.log("coucou");
-        }
-    }
-    console.log(map1);
-    console.log(map2);
+function displayResult(result){
+    divResult.innerHTML = result
 }
-
-// guessButton.addEventListener("click", () => {})
 
 window.onload = () => {
     createButton();
     guess();
-    comparedOcc()
 }
