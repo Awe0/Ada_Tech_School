@@ -129,4 +129,5 @@ let travelsParsed = sortTrips(clientTrips);
 getTripsPrice(travelsParsed);
 let allArray = findCompabilities(travelsParsed);
 findBestPrice(allArray)
+console.log(allArray);
 
