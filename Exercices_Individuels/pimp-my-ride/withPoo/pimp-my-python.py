@@ -17,9 +17,8 @@ class Trip:
               "h / Durée : " + str(self.duration) + 
               "h / Prix : " + str(self.price) + 
               "€ / Arrivée : " + str(self.end) + "h")
-        
 
-    
+
 roger = Trip("Roger", 0,5,10);
 pongo = Trip("Pongo",3,7,14);
 perdita = Trip("Perdita",8,10,8);
@@ -41,6 +40,5 @@ def find_compatibilities():
                 print("pas ok : " + i.clientName, j.clientName)
             else:
                 print("pas ok : " + i.clientName, j.clientName)
-    return trips
-        
+
 print(find_compatibilities())
