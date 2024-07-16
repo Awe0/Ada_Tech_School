@@ -15,3 +15,5 @@ function askBirthYear(){
 
 askName()
 askBirthYear()
+
+module.exports = askName;
