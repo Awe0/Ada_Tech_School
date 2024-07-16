@@ -1,6 +1,7 @@
 function fizzBuzz(start, stop){
     let result = [];
     for (i = start;  i < stop; i++) {
+        if(i <= 0) continue;
         if (i%3 === 0 && i%5 === 0){
             result.push(i+'.fizzbuzz');
         }
