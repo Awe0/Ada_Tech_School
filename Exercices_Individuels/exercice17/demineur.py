@@ -64,6 +64,3 @@ class Demineur:
                     if self.grid[coordY][coordX] == '*':
                         count += 1
         return count
-
-game = Demineur(5,5)
-game.printGrid()
