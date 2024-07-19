@@ -1,6 +1,5 @@
 import random
 
-
 class Demineur:
 
     def __init__(self, gridSize, nbMines):
@@ -64,3 +63,15 @@ class Demineur:
                     if self.grid[coordY][coordX] == '*':
                         count += 1
         return count
+    
+    def revealCell(self, x, y):
+        if self.grid[y][x] == '*':
+            print("Perdu")
+            return False
+        elif self.grid[y][x] != '*':
+            print("continue")
+            self.grid[y][x] = ' '
+            return True
+        
+    def play(self):
+        pass
