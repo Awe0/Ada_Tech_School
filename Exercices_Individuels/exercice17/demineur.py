@@ -9,12 +9,13 @@ class Demineur:
         self.grid = self.createGrid()
         self.placeMine()
         self.defineNumbers()
+        self.reveal = False
 
     def createRow(self):
-        hide = '#'
+        hash = '#'
         row = []
         for i in range(self.gridSize):
-            row.append(hide)
+            row.append(hash)
         return row
 
     def createGrid(self):
@@ -25,7 +26,16 @@ class Demineur:
 
     def printGrid(self):
         for row in self.grid:
-            print(' '.join(row))
+            hiddenRow = []
+            if self.reveal == False:
+                for cell in row:
+                    if cell != ' ':
+                        hiddenRow.append('#')
+                    else:
+                        hiddenRow.append(' ')
+                print(' '.join(hiddenRow))
+            else:
+                print(' '.join(row))
 
     def placeMine(self):
         mines = 0
