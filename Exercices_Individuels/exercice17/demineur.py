@@ -1,6 +1,5 @@
 import random
 
-hash = '#'
 
 class Demineur:
 
@@ -9,11 +8,13 @@ class Demineur:
         self.nbMines = nbMines
         self.grid = self.createGrid()
         self.placeMine()
+        self.defineNumbers()
 
     def createRow(self):
+        hide = '#'
         row = []
         for i in range(self.gridSize):
-            row.append(hash)
+            row.append(hide)
         return row
 
     def createGrid(self):
@@ -34,6 +35,25 @@ class Demineur:
             if self.grid[y][x] != '*':
                 self.grid[y][x] = '*'
                 mines += 1
+
+    def defineNumbers(self):
+        for y in range(self.gridSize):
+            for x in range(self.gridSize):
+                if self.grid[y][x] != '*':
+                    number = self.countAdjacentMines(x, y)
+                    if number > 0:
+                        self.grid[y][x] = str(number)
+
+    def countAdjacentMines(self, x, y):
+        count = 0
+        for directionX in [-1, 0, 1]:
+            for directionY in [-1, 0, 1]:
+                coordX = x + directionX
+                coordY = y + directionY
+                if 0 <= coordX < self.gridSize and 0 <= coordY < self.gridSize:
+                    if self.grid[coordY][coordX] == '*':
+                        count += 1
+        return count
 
 game = Demineur(5,5)
 game.printGrid()
