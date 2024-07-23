@@ -57,14 +57,18 @@ function searchMysteryNumber(givenNumber, mysteryNumber, player){
  * @param {string} resultGame : texte envoyé par la fonction searchMysteryNumber
  */
 function displayResult(resultGame, player){
+    let result = []
     if(player == 0){
     const resultP1 = document.getElementById("resultP1")
     resultP1.innerText = "Joueur 1, " + resultGame
+    result.push('player ' + player + " " + resultGame)
     }
-    else{
+    else {
     const resultP2 = document.getElementById("resultP2")
     resultP2.innerText = "Joueur 2, " + resultGame
+    result.push('player ' + player + " " + resultGame)
     }
+    return result
 }
 
 /**
@@ -107,3 +111,5 @@ function gameTurn (baliseNumberP1, baliseNumberP2, mysteryNumber, turn){
     }
 
 }
+
+module.exports = displayResult;
